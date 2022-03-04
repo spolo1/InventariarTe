@@ -4,24 +4,12 @@ import {
   StatusBar,
   StyleSheet,
 } from 'react-native';
-import BlankButton from './src/Components/BlankButton';
-import InputText from './src/Components/InputText';
-import RoundButton from './src/Components/RoundButton'
+import Routes from './src/Navigation/Routes';
 const App= () => {
   return (
     <SafeAreaView style = {styles.container}>
       <StatusBar backgroundColor="#28302D"/>
-      <RoundButton 
-        text = 'iniciar sesion'
-        onPress ={()=>{alert('Iniciar Sesión')}}/>
-      <BlankButton
-        text="¿No tienes cuenta?"
-        button = "Registrate"
-        onPress = {()=>{alert('registrarse')}}
-        />
-      <InputText
-          place={'Email'}
-          type={'numeric'}/>
+        <Routes/>
     </SafeAreaView>
   )
 };
