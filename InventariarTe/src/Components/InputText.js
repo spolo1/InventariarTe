@@ -11,7 +11,8 @@ const InputText = (props) => {
                 placeholder={place}
                 value={text}
                 onChangeText={setText}
-                keyboardType={type}/>
+                keyboardType={type}
+                secureTextEntry={true}/>
         </View>
     )
 };
