@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import { StyleSheet, View, TextInput, Text} from 'react-native';
 
 const InputText = (props) => {
-    const [text, setText] = useState('')
-    const {place, type} = props
+    const {place, type, text, setText} = props
     return(
         <View style = {styles.inputContainer}>
             <TextInput 
