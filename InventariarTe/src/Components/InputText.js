@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
-import { StyleSheet, View, TextInput, Text} from 'react-native';
+import React from 'react';
+import { StyleSheet, View, TextInput} from 'react-native';
 
 const InputText = (props) => {
-    const {place, type, text, setText} = props
+    const {place, type,value, setText} = props
     return(
         <View style = {styles.inputContainer}>
             <TextInput 
                 style = {styles.input}
                 placeholder={place}
-                value={text}
-                onChangeText={setText}
                 keyboardType={type}
+                onChangeText = {setText}
+                value = {value}
+                placeholderTextColor="#188209"
                 secureTextEntry={true}/>
         </View>
     )

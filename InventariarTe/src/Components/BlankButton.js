@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
     BlankContainer:{
         justifyContent:'center',
         alignItems:'center',
-        flexDirection:'row'
+        flexDirection:'row',
+        marginBottom:'3%',
     }
 })
 export default BlankButton;

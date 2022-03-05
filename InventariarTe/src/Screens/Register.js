@@ -9,50 +9,39 @@ import {
   } from 'react-native';
 import RoundButton from '../Components/RoundButton';
 import BlankButton from '../Components/BlankButton';
-
+import InputText from '../Components/InputText';
 const Register = ({navigation}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [correo,setCorreo]=useState('');
     return(
         <SafeAreaView style = {styles.RegisterContainer}>
+            <View style = {styles.Part1}>
                 <Text style = {styles.Tittle}>Registro</Text>
-                <View style = {styles.inputContainer}>
-                    <TextInput 
-                        style = {styles.input}
-                        placeholder='Nombre de usuario'
-                        value={username}
-                        onChangeText={setUsername}
-                        keyboardType='default'
-                    />
-                </View>
-                <View style = {styles.inputContainer}>
-                    <TextInput 
-                        style = {styles.input}
-                        placeholder='Correo'
-                        value={correo}
-                        onChangeText={setCorreo}
-                        keyboardType='email-address'
-                    />
-                </View>
-                <View style = {styles.inputContainer}>
-                    <TextInput 
-                        style = {styles.input}
-                        placeholder='Contraseña'
-                        value={password}
-                        onChangeText={setPassword}
-                        secureTextEntry={true}
-                    />
-                </View>
+            </View>
+            <View>
+                <InputText
+                    place = "Nombre de usuario"
+                    style= "default"
+                    onChangeText = {(username) => setUsername (username)}/>
+                <InputText
+                    place = "Correo electrónico"
+                    style = "email-address"
+                    onChangeText = {(correo) => setCorreo (correo)}/>
+                <InputText
+                    place = "Contraseña"
+                    onChangeText = {(password) => setPassword (password)}/>
                 <RoundButton
-                text="Login"
-                onPress={()=>{navigation.navigate('Login')}}/>
-                <View style={{marginTop:'55%'}}>
-                    <BlankButton
-                        text='¿Ya tienes cuenta?'
-                        button='Iniciar Sesión'
-                        onPress={()=>{navigation.navigate('Login')}}/>
-                </View>
+                    text = "Crear usuario"
+                    onPress = {()=> {navigation.navigate('Login')}}/>
+            </View>
+            <View>
+                
+                <BlankButton
+                    text = "¿Ya tienes cuenta?"
+                    button = "Iniciar sesión"
+                    onPress = {()=>{navigation.navigate('Login')}}/>
+            </View>
         </SafeAreaView>
     )
 }
@@ -60,10 +49,12 @@ const styles = StyleSheet.create({
     RegisterContainer:{
         backgroundColor:"#FEF5DC",
         flex:1,
+        justifyContent:'space-evenly',
+    },
+    Part1:{
+        alignItems:'center',
     },
     Tittle:{
-        marginHorizontal:'36%',
-        marginTop:'20%',
         fontSize:28,
         fontWeight: "bold",
         color:'#188209',
